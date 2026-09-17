@@ -1,0 +1,18 @@
+# Netlify config — Cyphernode (site estático, sem build)
+[build]
+  publish = "."
+  command = ""
+
+# Headers de segurança (dificulta clone + melhora confiança)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache de assets estáticos
+[[headers]]
+  for = "*.@(jpg|jpeg|png|webp|mp4|webm|js|css|svg|woff2)"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"

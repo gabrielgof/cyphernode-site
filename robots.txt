@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Aviso de propriedade intelectual
+# Este site e todo o seu conteúdo (textos, identidade visual, logotipo,
+# código e funcionalidades) pertencem a Cyphernode Soluções Técnicas
+# Integradas. Todos os direitos reservados.
+# Cópia, reprodução ou reutilização não autorizada são proibidas.

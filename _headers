@@ -1,0 +1,37 @@
+# Cloudflare Pages — headers de segurança (anti-clone) + cache de assets
+# Documentação: https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/*.jpg
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.png
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.mp4
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.webm
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.js
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.css
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=2592000, immutable
