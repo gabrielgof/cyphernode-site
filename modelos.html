@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Sites | Cyphernode — Suporte Técnico On-Site</title>
+    <meta name="description" content="Veja os 3 modelos de sites que a Cyphernode desenvolve: institucional, profissional de serviços e comercial. Conheça os valores de criação e manutenção mensal.">
+    <link rel="icon" type="image/png" href="cypher-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0a0b0f',
+                        darkCard: '#111318',
+                        darkBorder: '#1f2937',
+                        cyanNeon: '#00f0ff',
+                        blueNeon: '#3b82f6',
+                    },
+                    fontFamily: {
+                        tech: ['"Orbitron"', '"Fira Code"', 'monospace'],
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #00f0ff, 0 0 10px #00f0ff' },
+                            '100%': { boxShadow: '0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #0a0b0f; color: #e5e7eb; font-family: 'Inter', sans-serif; }
+        .font-tech { font-family: 'Orbitron', monospace; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0b0f; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00f0ff; }
+        .gradient-text {
+            background: linear-gradient(135deg, #00f0ff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass {
+            background: rgba(17, 19, 24, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(31, 41, 55, 0.5);
+        }
+        .model-preview {
+            background: linear-gradient(135deg, #111318 0%, #1a1d24 100%);
+            border: 1px solid #1f2937;
+            transition: all 0.3s ease;
+        }
+        .model-preview:hover {
+            border-color: #00f0ff;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+            transform: translateY(-4px);
+        }
+        .price-card {
+            background: linear-gradient(180deg, rgba(17, 19, 24, 0.9) 0%, rgba(11, 13, 17, 0.9) 100%);
+            border: 1px solid #1f2937;
+            transition: all 0.3s ease;
+        }
+        .price-card:hover {
+            border-color: #00f0ff;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+        }
+        .price-card.featured {
+            border-color: #00f0ff;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+            background: linear-gradient(180deg, rgba(0, 240, 255, 0.05) 0%, rgba(17, 19, 24, 0.9) 100%);
+        }
+        .maintenance-card {
+            background: rgba(17, 19, 24, 0.6);
+            border: 1px solid #1f2937;
+            transition: all 0.3s ease;
+        }
+        .maintenance-card:hover {
+            border-color: #3b82f6;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.2s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00f0ff;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-link:hover { color: #00f0ff; }
+        .section-title {
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+        @media (max-width: 768px) {
+            .model-preview { min-height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- HEADER / NAVEGAÇÃO                                                   -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-darkBorder/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="cypher-logo.png" alt="CYPHERNODE" class="w-8 h-8 object-contain rounded-full bg-gradient-to-br from-cyanNeon to-blueNeon p-0.5">
+                    <span class="font-tech text-lg font-bold text-white hidden sm:block group-hover:text-cyanNeon transition-colors">CYPHERNODE</span>
+                </a>
+
+                <!-- Menu desktop -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Início</a>
+                    <a href="#modelos" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Modelos de Sites</a>
+                    <a href="#planos" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Planos e Valores</a>
+                    <a href="index.html#contato" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Contato</a>
+                </nav>
+
+                <!-- CTA + menu mobile -->
+                <div class="flex items-center gap-4">
+                    <a href="#planos" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-cyanNeon to-blueNeon text-darkBg font-bold text-sm hover:shadow-lg hover:shadow-cyanNeon/20 transition-all">
+                        Ver Planos
+                    </a>
+                    <!-- Botão menu mobile -->
+                    <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-darkCard transition-colors">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu mobile dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-darkBorder bg-darkBg/95 backdrop-blur-xl">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-darkCard/50 transition-colors text-sm font-medium">Início</a>
+                <a href="#modelos" class="block px-4 py-3 rounded-lg text-cyanNeon hover:bg-darkCard/50 transition-colors text-sm font-medium">Modelos de Sites</a>
+                <a href="#planos" class="block px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-darkCard/50 transition-colors text-sm font-medium">Planos e Valores</a>
+                <a href="index.html#contato" class="block px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-darkCard/50 transition-colors text-sm font-medium">Contato</a>
+                <a href="#planos" class="block w-full text-center px-5 py-3 rounded-full bg-gradient-to-r from-cyanNeon to-blueNeon text-darkBg font-bold text-sm mt-2">Ver Planos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- HERO                                                                  -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden">
+        <!-- Fundo decorativo -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyanNeon/5 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blueNeon/5 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1.5s;"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-darkCard/80 border border-darkBorder mb-8">
+                <span class="w-2 h-2 rounded-full bg-cyanNeon animate-pulse"></span>
+                <span class="text-xs text-gray-400 tracking-widest uppercase">Novo — Conheça nossas opções</span>
+            </div>
+
+            <h1 class="font-tech text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 section-title">
+                Modelos de<br>
+                <span class="gradient-text">Sites Que Criamos</span>
+            </h1>
+
+            <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+                Cada site é uma solução personalizada, mas inspirada em modelos que já comprovamos com nossos clientes.
+                Conheça abaixo os 3 modelos que a Cyphernode desenvolve — e veja os valores de criação e manutenção mensal.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#modelos" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-cyanNeon to-blueNeon text-darkBg font-bold text-sm hover:shadow-lg hover:shadow-cyanNeon/25 transition-all">
+                    Ver os 3 modelos
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <a href="index.html#contato" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-darkBorder text-gray-400 text-sm hover:border-cyanNeon hover:text-cyanNeon transition-all">
+                    Falar com a Cyphernode
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- SEÇÃO: OS 3 MODELOS                                                  -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section id="modelos" class="py-24 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-tech text-3xl md:text-4xl font-black text-white mb-4">
+                    3 Modelos, <span class="gradient-text">3 Soluções</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Cada modelo foi pensado para um tipo de negócio diferente. Todos são personalizados — o cliente escolhe o modelo base e a Cyphernode adapta ao seu projeto.
+                </p>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- MODELO 1: SITE INSTITUCIONAL              -->
+            <!-- ═══════════════════════════════════════ -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-cyanNeon to-blueNeon text-darkBg font-tech font-bold text-sm">1</span>
+                    <h3 class="font-tech text-xl md:text-2xl font-bold text-white">Site Institucional <span class="text-gray-500 font-normal">/ Empresa & Comércio</span></h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Preview do modelo -->
+                    <div class="model-preview rounded-2xl overflow-hidden">
+                        <!-- Mockup do site -->
+                        <div class="p-5 md:p-6 space-y-4 border-b border-darkBorder/50 pb-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-7 h-7 rounded-full bg-gradient-to-br from-cyanNeon to-blueNeon p-0.5"></div>
+                                    <span class="text-white text-sm font-bold">EMPRESA XYZ</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-gray-500 text-xs hidden sm:inline">(21) 99999-9999</span>
+                                    <span class="text-gray-500 text-xs">contato@empresa.com.br</span>
+                                </div>
+                            </div>
+                            <div class="h-40 md:h-56 rounded-xl bg-gradient-to-br from-cyanNeon/20 to-blueNeon/10 flex items-center justify-center border border-darkBorder/50 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-gradient-to-t from-darkBg/80 to-transparent"></div>
+                                <div class="relative z-10 text-center">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyanNeon to-blueNeon p-1 mx-auto mb-3">
+                                        <div class="w-full h-full rounded-full bg-darkBg flex items-center justify-center">
+                                            <svg class="w-8 h-8 text-cyanNeon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-white text-lg font-bold">Soluções que Transformam</p>
+                                    <p class="text-gray-400 text-sm mt-1">Serviços especializados para seu negócio</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 md:p-6 space-y-3">
+                            <h4 class="text-white text-base font-bold flex items-center gap-2">
+                                <svg class="w-4 h-4 text-cyanNeon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 010-4m4 4v-4m-4 4h4m-4-4v-6m4 6h4"></path></svg>
+                                Serviços
+                            </h4>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="px-3 py-2 rounded-lg bg-darkCard/50 border border-darkBorder/30">
+                                    <div class="text-cyanNeon text-xs font-bold">SERVIÇO 01</div>
+                                    <div class="text-gray-300 text-xs mt-0.5">Descrição do serviço com valor agregado</div>
+                                </div>
+                                <div class="px-3 py-2 rounded-lg bg-darkCard/50 border border-darkBorder/30">
+                                    <div class="text-cyanNeon text-xs font-bold">SERVIÇO 02</div>
+                                    <div class="text-gray-300 text-xs mt-0.5">Outro serviço destacado da empresa</div>
+                                </div>
+                                <div class="px-3 py-2 rounded-lg bg-darkCard/50 border border-darkBorder/30">
+                                    <div class="text-cyanNeon text-xs font-bold">SERVIÇO 03</div>
+                                    <div class="text-gray-300 text-xs mt-0.5">Terceiro serviço com benefício claro</div>
+                                </div>
+                                <div class="px-3 py-2 rounded-lg bg-darkCard/50 border border-darkBorder/30">
+                                    <div class="text-cyanNeon text-xs font-bold">SERVIÇO 04</div>
+                                    <div class="text-gray-300 text-xs mt-0.5">Quarto serviço disponível</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="flex-1 h-9 rounded-lg bg-darkCard border border-darkBorder flex items-center px-3 text-gray-500 text-xs">Seu nome...</div>
+                                <div class="flex-1 h-9 rounded-lg bg-darkCard border border-darkBorder flex items-center px-3 text-gray-500 text-xs">Seu e-mail...</div>
+                                <button class="h-9 px-4 rounded-lg bg-cyanNeon text-darkBg font-bold text-xs hover:opacity-90 transition-opacity">Enviar</button>
+                            </div>
+                            <div class="flex items-center gap-4 pt-1">
+                                <span class="text-gray-600 text-xs flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"></path></svg> WhatsApp</span>
+                                <span class="text-gray-600 text-xs flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="11" cy="10" r="2"></circle></svg> Localização</span>
+                                <span class="text-gray-600 text-xs flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg> Agende</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descrição -->
+                    <div class="space-y-4">
+                        <div class="p-5 rounded-2xl bg-darkCard/50 border border-darkBorder/50">
+                            <h4 class="text-cyanNeon font-tech text-sm font-bold mb-3">CARACTERÍSTICAS</h4>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-cyanNeon mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    1 a 3 páginas: Home, Sobre, Serviços e/ou Contato
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-cyanNeon mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Design profissional e clean, com identidade visual da empresa
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-cyanNeon mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Seção de serviços com descrições E você a gente escreve
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-cyanNeon mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Contato: WhatsApp, e-mail, telefone, formulário
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-cyanNeon mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Responsivo (funciona em celular, tablet e desktop)
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-cyanNeon mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    SEO básico para aparecer no Google
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-cyanNeon/10 to-blueNeon/10 border border-cyanNeon/20">
+                            <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <div>
+                                <p class="text-white text-sm font-semibold">Ideal para</p>
+                                <p class="text-gray-400 text-sm mt-0.5">Empresas de qualquer porte, comércios locais, escritórios, profissionais que querem presença digital profissional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- MODELO 2: SITE DE PROFISSIONAL DE       -->
+            <!-- SERVIÇOS (FREELANCER / CONSULTOR)       -->
+            <!-- ═══════════════════════════════════════ -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 text-darkBg font-tech font-bold text-sm">2</span>
+                    <h3 class="font-tech text-xl md:text-2xl font-bold text-white">Site de <span class="text-gray-500 font-normal">Profissional de Serviços</span> <span class="text-gray-500 font-normal">/ Freelancer & Consultor</span></h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Preview do modelo -->
+                    <div class="model-preview rounded-2xl overflow-hidden">
+                        <div class="p-5 md:p-6 space-y-4 border-b border-darkBorder/50 pb-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 p-0.5 shrink-0">
+                                    <div class="w-full h-full rounded-full bg-darkBg flex items-center justify-center text-2xl font-bold text-purple-300">JP</div>
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold">João Pereira</p>
+                                    <p class="text-gray-400 text-xs">Designer & Consultor Visual</p>
+                                </div>
+                            </div>
+                            <div class="h-36 rounded-xl bg-gradient-to-br from-purple-400/20 to-pink-500/10 flex items-center justify-center border border-darkBorder/50 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-gradient-to-t from-darkBg/80 to-transparent"></div>
+                                <div class="relative z-10 text-center">
+                                    <p class="text-white text-lg font-bold">Design que comunica</p>
+                                    <p class="text-gray-400 text-sm mt-1">Criando identidades visuais memoráveis</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 md:p-6 space-y-3">
+                            <h4 class="text-white text-base font-bold mb-2">Áreas de Atuação</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-medium">Design Gráfico</span>
+                                <span class="px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-medium">Identidade Visual</span>
+                                <span class="px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-medium">UI/UX</span>
+                                <span class="px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-medium">Web Design</span>
+                                <span class="px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-medium">Branding</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-3 pt-2">
+                                <div class="text-center p-2 rounded-lg bg-darkCard/50 border border-darkBorder/30">
+                                    <div class="text-cyanNeon text-lg font-bold">12+</div>
+                                    <div class="text-gray-500 text-xs">Projetos</div>
+                                </div>
+                                <div class="text-center p-2 rounded-lg bg-darkCard/50 border border-darkBorder/30">
+                                    <div class="text-cyanNeon text-lg font-bold">4.9</div>
+                                    <div class="text-gray-500 text-xs">Avaliação</div>
+                                </div>
+                                <div class="text-center p-2 rounded-lg bg-darkCard/50 border border-darkBorder/30">
+                                    <div class="text-cyanNeon text-lg font-bold">5★</div>
+                                    <div class="text-gray-500 text-xs">Aprov.</div>
+                                </div>
+                            </div>
+                            <h4 class="text-white text-sm font-bold mt-3 mb-2">Depoimento</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed italic">"A Cyphernode entendeu exatamente o que eu precisava. O site transplantou minha profissão para a internet de forma profissional e elegante."</p>
+                            <div class="flex items-center gap-2 pt-1">
+                                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-cyanNeon to-blueNeon p-0.5 flex items-center justify-center text-[10px] font-bold text-darkBg">M</div>
+                                <span class="text-gray-500 text-xs">— Mariana, Cliente</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descrição -->
+                    <div class="space-y-4">
+                        <div class="p-5 rounded-2xl bg-darkCard/50 border border-darkBorder/50">
+                            <h4 class="text-purple-400 font-tech text-sm font-bold mb-3">CARACTERÍSTICAS</h4>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Apresentação pessoal com foto e biografia
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Seção de áreas de atuação com tags/divisões
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Portfólio ou casos de sucesso (3 a 6 projetos)
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Depoimentos ou avaliações de clientes
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Contato direto + agendamento de consultoria
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    LinkedIn, Instagram e redes integrados
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-purple-400/10 to-pink-500/10 border border-purple-500/20">
+                            <svg class="w-5 h-5 text-purple-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <div>
+                                <p class="text-white text-sm font-semibold">Ideal para</p>
+                                <p class="text-gray-400 text-sm mt-0.5">Freelancers, designers, programadores, consultores, coaches, terapeutas e qualquer profissional que venda serviços individuais.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- MODELO 3: SITE COMERCIAL                -->
+            <!-- (RESTAURANTE / VAREJO / LOCAL)          -->
+            <!-- ═══════════════════════════════════════ -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 text-darkBg font-tech font-bold text-sm">3</span>
+                    <h3 class="font-tech text-xl md:text-2xl font-bold text-white">Site <span class="text-gray-500 font-normal">Comercial</span> <span class="text-gray-500 font-normal">/ Restaurante, Varejo & Local</span></h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Preview do modelo -->
+                    <div class="model-preview rounded-2xl overflow-hidden">
+                        <div class="p-5 md:p-6 space-y-4 border-b border-darkBorder/50 pb-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 p-0.5">
+                                        <svg class="w-5 h-5 text-darkBg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 012-2m14 0V7a2 2 0 00-2-2H7a2 2 0 00-2 2v3a2 2 0 002 2h14a2 2 0 002-2z"></path></svg>
+                                    </div>
+                                    <span class="text-white text-sm font-bold">RESTAURANTE A COCINHA</span></span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-[10px] font-bold text-white">★</span>
+                                    <span class="text-gray-400 text-xs">4.8 (127 avaliações)</span>
+                                </div>
+                            </div>
+                            <div class="h-40 md:h-56 rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/10 flex items-center justify-center border border-darkBorder/50 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-gradient-to-t from-darkBg/80 to-transparent"></div>
+                                <div class="relative z-10 text-center">
+                                    <div class="w-12 h-12 rounded-full bg-emerald-500/30 p-1 mx-auto mb-3">
+                                        <svg class="w-7 h-7 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    </div>
+                                    <p class="text-white text-lg font-bold">Comida Feita com Amor</p>
+                                    <p class="text-gray-400 text-sm mt-1">Receba nossas novidades no WhatsApp</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 md:p-6 space-y-3">
+                            <h4 class="text-white text-base font-bold mb-2">Cardápio / O que Oferecemos</h4>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="px-3 py-2 rounded-lg bg-darkCard/50 border border-darkBorder/30 flex items-center gap-2">
+                                    <span class="text-emerald-400">🍽️</span>
+                                    <div><span class="text-white text-xs font-semibold block">Prato Principal</span><span class="text-gray-500 text-[10px]">A partir de R$ 29</span></div>
+                                </div>
+                                <div class="px-3 py-2 rounded-lg bg-darkCard/50 border border-darkBorder/30 flex items-center gap-2">
+                                    <span class="text-emerald-400">🥗</span>
+                                    <div><span class="text-white text-xs font-semibold block">Entradas</span><span class="text-gray-500 text-[10px]">A partir de R$ 15</span></div>
+                                </div>
+                                <div class="px-3 py-2 rounded-lg bg-darkCard/50 border border-darkBorder/30 flex items-center gap-2">
+                                    <span class="text-emerald-400">🥤</span>
+                                    <div><span class="text-white text-xs font-semibold block">Bebidas</span><span class="text-gray-500 text-[10px]">A partir de R$ 8</span></div>
+                                </div>
+                                <div class="px-3 py-2 rounded-lg bg-darkCard/50 border border-darkBorder/30 flex items-center gap-2">
+                                    <span class="text-emerald-400">🎂</span>
+                                    <div><span class="text-white text-xs font-semibold block">Sobremesas</span><span class="text-gray-500 text-[10px]">A partir de R$ 12</span></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="flex-1 h-9 rounded-lg bg-darkCard border border-darkBorder flex items-center px-3 text-gray-500 text-xs">Seu nome...</div>
+                                <div class="flex-1 h-9 rounded-lg bg-darkCard border border-darkBorder flex items-center px-3 text-gray-500 text-xs">Seu WhatsApp...</div>
+                                <button class="h-9 px-4 rounded-lg bg-emerald-500 text-white font-bold text-xs hover:opacity-90 transition-opacity">Reservar</button>
+                            </div>
+                            <div class="flex items-center gap-4 pt-1">
+                                <span class="text-gray-600 text-xs flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-1.54 3.08a1 1 0 00.556 1.037v8.28a1 1 0 00.788 1.037l1.54 3.08a1 1 0 00.788 0l6.793 6.793a1 1 0 001.128-1.128l-3.08-1.54a1 1 0 00-1.037-.788h-8.28a1 1 0 00-1.037.788l-3.08 1.54a1 1 0 00-.556 1.037L2.107 19.464a1 1 0 000 1.414l1.54 1.54a1 1 0 001.037.788h8.28a1 1 0 001.037-.788l3.08-1.54a1 1 0 00.556-1.037L17.893 18.05a1 1 0 000-1.414l-1.54-1.54a1 1 0 00-1.037-.788h-8.28z"></path></svg> WhatsApp</span>
+                                <span class="text-gray-600 text-xs flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="11" cy="10" r="2"></circle></svg> Endereço</span>
+                                <span class="text-gray-600 text-xs flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 12.586V8a6 6 0 00-6-6z"></path></svg> Horário</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descrição -->
+                    <div class="space-y-4">
+                        <div class="p-5 rounded-2xl bg-darkCard/50 border border-darkBorder/50">
+                            <h4 class="text-emerald-400 font-tech text-sm font-bold mb-3">CARACTERÍSTICAS</h4>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Hero com fotos/atmosphère do negócio (restaurante, loja, etc.)
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Cardápio, menu, produtos ou serviços com preços
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Fotos do local, ambiente, equipe ou produtos
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Reserva/encontro via WhatsApp com link direto
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Endereço, horário de funcionamento e mapa
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Links para Google Maps, Instagram, avaliações
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-emerald-400/10 to-teal-500/10 border border-emerald-500/20">
+                            <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <div>
+                                <p class="text-white text-sm font-semibold">Ideal para</p>
+                                <p class="text-gray-400 text-sm mt-0.5">Restaurantes, cafés, bares, lanchonetes, lojas, boutiques, salões, academias, clínicas e qualquer negócio de varejo ou local.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- OBSERVação: TODOS OS MODELOS SÃO         -->
+            <!-- PERSONALIZÁVEIS                          -->
+            <!-- ═══════════════════════════════════════ -->
+            <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-cyanNeon/10 via-blueNeon/10 to-purple-500/10 border border-cyanNeon/20 text-center">
+                <svg class="w-6 h-6 text-cyanNeon mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                    <strong class="text-white">Importante:</strong> Estes são modelos-base. Cada site é <strong class="text-cyanNeon">personalizado</strong> — a Cyphernode adapta cores, layout, conteúdo e funcionalidades ao projeto específico de cada cliente. É possível combinar elementos de diferentes modelos ou criar algo do zero.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- SEÇÃO: PLANOS E VALORES                                              -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section id="planos" class="py-24 md:py-32 relative bg-darkCard/20">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-cyanNeon/3 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 bg-blueNeon/3 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-darkCard/80 border border-darkBorder mb-6">
+                    <span class="w-2 h-2 rounded-full bg-cyanNeon animate-pulse"></span>
+                    <span class="text-xs text-gray-400 tracking-widest uppercase">Investimento</span>
+                </span>
+                <h2 class="font-tech text-3xl md:text-4xl font-black text-white mb-4">
+                    Plano de <span class="gradient-text">Criação e Manutenção</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Valor justo de mercado paraSão Paulo e região. Cada projeto é cotado individualmente, mas estas são as bases que usamos como referência.
+                </p>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- PLANOS DE CRIAÇÃO DE SITE               -->
+            <!-- ═══════════════════════════════════════ -->
+            <div class="mb-16">
+                <h3 class="font-tech text-xl md:text-2xl font-bold text-white text-center mb-8">
+                    Criação de Site <span class="text-gray-500 font-normal">— 3 Níveis</span>
+                </h3>
+
+                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- Plano Básico -->
+                    <div class="price-card rounded-2xl p-6 md:p-8 flex flex-col">
+                        <div class="mb-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center text-xs font-bold text-white">B</span>
+                                <span class="text-gray-500 text-xs tracking-widest uppercase">Nível</span>
+                            </div>
+                            <h4 class="text-xl md:text-2xl font-tech font-bold text-white">Site Básico</h4>
+                            <p class="text-gray-500 text-sm mt-1">1 a 3 páginas · Entrega 5-7 dias</p>
+                        </div>
+                        <div class="mb-6">
+                            <span class="font-tech text-4xl md:text-5xl font-black text-white">R$ 1.800</span>
+                            <span class="text-gray-500 text-sm block mt-1">por projeto</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Até 3 páginas (Home, Sobre e/ou Contato)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Design clean e profissional</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Responsivo (celular, tablet, desktop)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Contato: WhatsApp, e-mail, telefone, formulário</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">SEO básico para aparecer no Google</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Hospedagem incluída (1 ano)</span>
+                            </li>
+                        </ul>
+                        <a href="index.html#contato" class="block w-full text-center px-5 py-3 rounded-full border border-darkBorder text-gray-400 text-sm font-medium hover:border-cyanNeon hover:text-cyanNeon transition-all">
+                            Quero esse modelo
+                        </a>
+                    </div>
+
+                    <!-- Plano Profissional (Featured) -->
+                    <div class="price-card featured rounded-2xl p-6 md:p-8 flex flex-col relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyanNeon to-blueNeon text-darkBg font-tech font-bold text-xs tracking-widest">
+                            MAIS VENDIDO
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-8 h-8 rounded-full bg-gradient-to-br from-cyanNeon to-blueNeon flex items-center justify-center text-xs font-bold text-darkBg">P</span>
+                                <span class="text-gray-500 text-xs tracking-widest uppercase">Nível</span>
+                            </div>
+                            <h4 class="text-xl md:text-2xl font-tech font-bold text-white">Site Profissional</h4>
+                            <p class="text-gray-500 text-sm mt-1">3 a 5 páginas · Entrega 10-15 dias</p>
+                        </div>
+                        <div class="mb-6">
+                            <span class="font-tech text-4xl md:text-5xl font-black text-white">R$ 3.500</span>
+                            <span class="text-gray-500 text-sm block mt-1">por projeto</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300 font-medium">Tudo do Básico, mais:</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Até 5 páginas com navegação personalizada</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Design personalizado (cores, tipografia, layout exclusivo)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Seções extras: Serviços, Portfólio, Depoimentos, etc.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">SEO avançado (palavras-chave, metadados, Google Business)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Formulários funcionais (enviam para seu e-mail/WhatsApp)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Hospedagem + domínio incluídos (1 ano)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">1 revisão de conteúdo inclusa</span>
+                            </li>
+                        </ul>
+                        <a href="index.html#contato" class="block w-full text-center px-5 py-3 rounded-full bg-gradient-to-r from-cyanNeon to-blueNeon text-darkBg font-bold text-sm hover:shadow-lg hover:shadow-cyanNeon/20 transition-all">
+                            Quero esse modelo
+                        </a>
+                    </div>
+
+                    <!-- Plano Avançado -->
+                    <div class="price-card rounded-2xl p-6 md:p-8 flex flex-col">
+                        <div class="mb-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-xs font-bold text-darkBg">A</span>
+                                <span class="text-gray-500 text-xs tracking-widest uppercase">Nível</span>
+                            </div>
+                            <h4 class="text-xl md:text-2xl font-tech font-bold text-white">Site Avançado</h4>
+                            <p class="text-gray-500 text-sm mt-1">5+ páginas · Entrega 20-30 dias</p>
+                        </div>
+                        <div class="mb-6">
+                            <span class="font-tech text-4xl md:text-5xl font-black text-white">R$ 6.500</span>
+                            <span class="text-gray-500 text-sm block mt-1">por projeto</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300 font-medium">Tudo do Profissional, mais:</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">6+ páginas com estrutura complexa</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Animações e interatividades sofisticadas</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Integrações: WhatsApp, e-mail marketing, CRM, etc.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Painel administrativo para gerenciar conteúdo</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Multilingue (básico: 2 idiomas)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">3 revisões de conteúdo inclusas</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Hospedagem + domínio + SSL (1 ano)</span>
+                            </li>
+                        </ul>
+                        <a href="index.html#contato" class="block w-full text-center px-5 py-3 rounded-full border border-darkBorder text-gray-400 text-sm font-medium hover:border-cyanNeon hover:text-cyanNeon transition-all">
+                            Quero esse modelo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- PLANOS DE MANUTENÇÃO                     -->
+            <!-- ═══════════════════════════════════════ -->
+            <div>
+                <h3 class="font-tech text-xl md:text-2xl font-bold text-white text-center mb-2">
+                    Manutenção <span class="text-gray-500 font-normal">— 3 Planos</span>
+                </h3>
+                <p class="text-gray-500 text-sm text-center mb-10 max-w-xl mx-auto">
+                    Todo site precisa de manutenção. Escolha o plano que melhor se encaixa — ou comece sem manutenção e adicione depois.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- Manutenção Essencial -->
+                    <div class="maintenance-card rounded-2xl p-6 md:p-8 flex flex-col">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center text-xs font-bold text-white">E</span>
+                            <span class="text-gray-500 text-xs tracking-widest uppercase">Plano</span>
+                        </div>
+                        <h4 class="text-lg font-tech font-bold text-white mb-1">Essencial</h4>
+                        <p class="text-gray-500 text-xs mb-4">Para sites pequenos que precisam de suporte básico</p>
+                        <div class="mb-6">
+                            <span class="font-tech text-3xl md:text-4xl font-black text-white">R$ 199</span>
+                            <span class="text-gray-500 text-sm block">por mês</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Atualização de conteúdo: até 2 alterações/mês</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Backup semanal automático</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Monitoramento de segurança e disponibilidade</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Atualizações de plugins/tecnologias</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-400">Suporte por e-mail (resposta em 24h)</span>
+                            </li>
+                        </ul>
+                        <a href="index.html#contato" class="block w-full text-center px-5 py-3 rounded-full border border-darkBorder text-gray-400 text-sm font-medium hover:border-cyanNeon hover:text-cyanNeon transition-all">
+                            Escolher essencial
+                        </a>
+                    </div>
+
+                    <!-- Manutenção Profissional -->
+                    <div class="maintenance-card rounded-2xl p-6 md:p-8 flex flex-col relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gray-700 text-gray-300 font-tech font-bold text-xs tracking-widest">
+                            RECOMENDADO
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="w-8 h-8 rounded-full bg-gradient-to-br from-cyanNeon to-blueNeon flex items-center justify-center text-xs font-bold text-darkBg">P</span>
+                            <span class="text-gray-500 text-xs tracking-widest uppercase">Plano</span>
+                        </div>
+                        <h4 class="text-lg font-tech font-bold text-white mb-1">Profissional</h4>
+                        <p class="text-gray-500 text-xs mb-4">Para sites que precisam crescer e aparecer</p>
+                        <div class="mb-6">
+                            <span class="font-tech text-3xl md:text-4xl font-black text-white">R$ 399</span>
+                            <span class="text-gray-500 text-sm block">por mês</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300 font-medium">Tudo do Essencial, mais:</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Atualização de conteúdo: até 5 alterações/mês</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">SEO: monitoramento e ajustes mensais</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Google Analytics + relatório mensal</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">2 horas de ajustes de design/funcionalidade</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Suporte por e-mail e WhatsApp (resposta em 12h)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Análise e correção de links quebrados</span>
+                            </li>
+                        </ul>
+                        <a href="index.html#contato" class="block w-full text-center px-5 py-3 rounded-full border border-darkBorder text-gray-400 text-sm font-medium hover:border-cyanNeon hover:text-cyanNeon transition-all">
+                            Escolher profissional
+                        </a>
+                    </div>
+
+                    <!-- Manutenção Premium -->
+                    <div class="maintenance-card rounded-2xl p-6 md:p-8 flex flex-col">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-xs font-bold text-darkBg">R</span>
+                            <span class="text-gray-500 text-xs tracking-widest uppercase">Plano</span>
+                        </div>
+                        <h4 class="text-lg font-tech font-bold text-white mb-1">Premium</h4>
+                        <p class="text-gray-500 text-xs mb-4">Para sites que são a principal fonte de negócios</p>
+                        <div class="mb-6">
+                            <span class="font-tech text-3xl md:text-4xl font-black text-white">R$ 799</span>
+                            <span class="text-gray-500 text-sm block">por mês</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300 font-medium">Tudo do Profissional, mais:</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Atualização de conteúdo: até 10 alterações/mês</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">SEO avançado: estratégia, palavras-chave, concorrência</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Otimização de velocidade e performance</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">5 horas de desenvolvimento/ajuste por mês</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Suporte prioritário (telefone/WhatsApp, resposta em 4h)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Campanha de SEO local (Google Meu Negócio)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-sm text-gray-300">Revisão de estratégia digital trimestral</span>
+                            </li>
+                        </ul>
+                        <a href="index.html#contato" class="block w-full text-center px-5 py-3 rounded-full bg-gradient-to-r from-cyanNeon to-blueNeon text-darkBg font-bold text-sm hover:shadow-lg hover:shadow-cyanNeon/20 transition-all">
+                            Escolher premium
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nota explicativa -->
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-darkCard/80 border border-darkBorder">
+                    <svg class="w-4 h-4 text-cyanNeon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-gray-400 text-sm">Todos os valores são <strong class="text-gray-300">aproximados</strong> e podem variar conforme complexidade, urgência e necessidades específicas do projeto. Cotização personalizada sempre disponível.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- CTA FINAL                                                             -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="py-20 md:py-28 relative">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyanNeon/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-tech text-3xl md:text-5xl font-black text-white mb-6 section-title">
+                Pronto para <span class="gradient-text">ter seu site?</span>
+            </h2>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                A Cyphernode desenvolve sites personalizados para empresas, profissionais e negócios de São Paulo e região.
+                Entre em contato e receba uma cotação sem compromisso em menos de 24 horas.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="index.html#contato" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-cyanNeon to-blueNeon text-darkBg font-bold text-sm md:text-base hover:shadow-xl hover:shadow-cyanNeon/30 transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 14.966 3 14.155 3 14c0-1.155.512-2.034 1.395-2.72L9 4c1.395 3.72 6.368 7 12 7s10.605-3.28 12-7c0-1.155-.512-2.034-1.395-2.72L21 4l-1.395 3.72C16.986 7.966 17.5 8.845 18 9.72c.555-2.146-1.383-4.05-3.395-4.72L15 4c1.395 3.72 6.368 7 12 7s10.605-3.28 12-7c0-1.155-.512-2.034-1.395-2.72L21 4l-1.395 3.72C16.986 7.966 17.5 8.845 18 9.72c.555-2.146-1.383-4.05-3.395-4.72L15 4c0 1.155.512 2.034 1.395 2.72L21 8c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L21 4"></path></svg>
+                    Fale pelo WhatsApp
+                </a>
+                <a href="mailto:suporte@cyphernode.com.br" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-darkBorder text-gray-400 text-sm md:text-base hover:border-cyanNeon hover:text-cyanNeon transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    Enviar e-mail
+                </a>
+            </div>
+            <p class="text-gray-600 text-xs mt-6">Resposta em até 24 horas · Primeira conversa é gratuita</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- FOOTER                                                                -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <footer class="border-t border-darkBorder py-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Coluna 1: Marca -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-4">
+                        <img src="cypher-logo.png" alt="CYPHERNODE" class="w-7 h-7 object-contain rounded-full bg-gradient-to-br from-cyanNeon to-blueNeon p-0.5">
+                        <span class="font-tech text-base font-bold text-white">CYPHERNODE</span>
+                    </a>
+                    <p class="text-gray-500 text-xs leading-relaxed">Suporte Técnico On-Site. Sites, automação e soluções técnicas para seu negócio.</p>
+                </div>
+                <!-- Coluna 2: Navegação -->
+                <div>
+                    <h5 class="text-white text-sm font-semibold mb-3">Navegação</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-500 text-sm hover:text-cyanNeon transition-colors">Início</a></li>
+                        <li><a href="index.html#servicos" class="text-gray-500 text-sm hover:text-cyanNeon transition-colors">Serviços</a></li>
+                        <li><a href="index.html#faq" class="text-gray-500 text-sm hover:text-cyanNeon transition-colors">Dúvidas</a></li>
+                        <li><a href="index.html#contato" class="text-gray-500 text-sm hover:text-cyanNeon transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <!-- Coluna 3: Contato -->
+                <div>
+                    <h5 class="text-white text-sm font-semibold mb-3">Contato</h5>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-gray-500 text-sm">
+                            <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            suporte@cyphernode.com.br
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-500 text-sm">
+                            <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 14.966 3 14.155 3 14c0-1.155.512-2.034 1.395-2.72L9 4c1.395 3.72 6.368 7 12 7s10.605-3.28 12-7c0-1.155-.512-2.034-1.395-2.72L21 4l-1.395 3.72C16.986 7.966 17.5 8.845 18 9.72c.555-2.146-1.383-4.05-3.395-4.72L15 4c1.395 3.72 6.368 7 12 7s10.605-3.28 12-7c0-1.155-.512-2.034-1.395-2.72L21 4l-1.395 3.72C16.986 7.966 17.5 8.845 18 9.72c.555-2.146-1.383-4.05-3.395-4.72L15 4c0 1.155.512 2.034 1.395 2.72L21 8c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L21 4"></path></svg>
+                            (21) 99999-9999
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-500 text-sm">
+                            <svg class="w-4 h-4 text-cyanNeon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827-2.829l.002-.002a2 2 0 012.828 0l6.586 6.586a2 2 0 010 2.83l-6.586 6.586a2 2 0 01-2.828-2.828L17.657 16.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            São Paulo, SP
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-darkBorder pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-600 text-xs">&copy; 2026 Cyphernode Soluções Técnicas Integradas. Todos os direitos reservados.</p>
+                <p class="text-gray-600 text-xs flex items-center gap-2">
+                    <svg class="w-3 h-3 text-cyanNeon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.667 4.666a1 1 0 11-1.732-1.732 2 2 0 112.732 2.732 1 1 0 11-1.732 1.732 2 2 0 11-2.732-2.732"></path></svg>
+                    Marca <span class="text-cyanNeon font-semibold">CYPHERNODE®</span> registrada — uso não autorizado sujeito a medidas legais.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- SCRIPTS                                                               -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <script>
+        // Menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            // Fecha ao clicar em um link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Active nav link based on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
