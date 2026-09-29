@@ -88,7 +88,7 @@
 <body class="bg-darkBg text-gray-200 font-sans antialiased selection:bg-cyanNeon selection:text-darkBg overflow-x-hidden">
 
     <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/80 backdrop-blur-md border-b border-darkBorder/60 transition-all duration-300">
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/80 backdrop-blur-md transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
                 <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg shadow-cyanNeon/20 transition-transform duration-300 group-hover:scale-105 overflow-hidden shrink-0">
@@ -100,14 +100,7 @@
                 <span class="font-tech text-xl font-black tracking-widest text-white transition-colors duration-300 group-hover:text-cyanNeon">CYPHER<span class="text-cyanNeon">NODE</span></span>
             </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#servicos" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Serviços</a>
-                <a href="#agendamento" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Agendar</a>
-                <a href="#faq" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Dúvidas</a>
-            </nav>
-
-            <div class="hidden md:flex items-center gap-4">
+            <div class="flex items-center gap-4">
                 <a href="https://wa.me/5511974374198" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-darkCard border border-darkBorder text-sm font-medium text-gray-300 hover:text-cyanNeon hover:border-cyanNeon/30 transition-all duration-300">
                     <i data-lucide="message-square" class="w-4 h-4"></i>
                     <span>Suporte Rápido</span>
@@ -116,38 +109,20 @@
                     Agendar On-Site
                 </a>
             </div>
-
-            <!-- Mobile menu button -->
-            <button id="menu-btn" class="md:hidden text-gray-400 hover:text-white transition-colors" aria-label="Abrir Menu">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
         </div>
-
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-darkCard/95 border-b border-darkBorder/80 py-6 px-6 backdrop-blur-lg flex flex-col gap-4">
-            <a href="#servicos" class="mobile-link text-base font-medium text-gray-300 py-2">Serviços</a>
-            <a href="#agendamento" class="mobile-link text-base font-medium text-gray-300 py-2">Agendar Serviço</a>
-            <a href="#faq" class="mobile-link text-base font-medium text-gray-300 py-2">Dúvidas</a>
-            <div class="h-px bg-darkBorder my-2"></div>
-            <a href="https://wa.me/5511974374198" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-lg bg-darkBg border border-darkBorder text-gray-300">
-                <i data-lucide="message-square" class="w-4 h-4"></i>
-                <span>Suporte via WhatsApp</span>
-            </a>
-            <a href="#agendamento" class="mobile-link inline-block py-3 rounded-lg text-center text-[#07121a] font-bold font-tech tracking-wider uppercase" style="background:linear-gradient(160deg,#00f0ff 0%,#2bc4ff 45%,#3b82f6 100%);box-shadow:0 8px 24px -8px rgba(0,240,255,0.5);">
-                Agendar On-Site
-            </a>
-        </div>
-    </header>
 
     <!-- Hero Section -->
     <section id="inicio" class="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden flex items-center">
         <!-- Fallback gradiente tecnológico (mostra imediatamente antes do vídeo carregar) -->
         <div class="absolute inset-0 z-0 bg-gradient-to-b from-[#0a1628] via-[#0d0e12] to-[#0a0b0f]"></div>
 
-        <!-- Background Video -->
+        <!-- Background Video (hero gamer: teclado + mão digitando) -->
         <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
             <source src="hero-bg.mp4" type="video/mp4">
         </video>
+
+        <!-- Barra slim sobre escura no topo (sobe igual menubar de app) -->
+        <div class="absolute top-0 left-0 right-0 z-20 h-1 bg-gradient-to-r from-cyanNeon/40 via-blue-500/30 to-cyanNeon/40" style="box-shadow: 0 0 20px rgba(0,240,255,0.15);"></div>
 
         <!-- Dark overlay para legibilidade -->
         <div class="absolute inset-0 z-[1]" style="background:linear-gradient(180deg,rgba(8,10,14,0.55) 0%,rgba(8,10,14,0.40) 45%,rgba(13,14,18,0.80) 100%)"></div>
